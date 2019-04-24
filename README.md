@@ -1,19 +1,12 @@
-# WEKA (stable version)
+# LOWEKA
 
-Read-only git mirror of Weka's subversion repository.
+LOWEKA is a fork of WEKA (stable version), with implementations of method proposed by research group LoLITA of Federal University of Rio Grande do Norte (UFRN)
 
-## Source code
-
-The official WEKA source code of the stable version is available from this URL:
-
-https://svn.cms.waikato.ac.nz/svn/weka/branches/stable-3-8/
-
-## Contributions/Bug fixes
-
-Contributions and bug fixes an be contributed as patch file and posted to the
-[WEKA mailing list](https://list.waikato.ac.nz/mailman/listinfo/wekalist).
 
 ## Links
 
-* [WEKA Homepage](https://www.cs.waikato.ac.nz/ml/weka/)
+* [LoLITA Homepage](http://lolita.dimap.ufrn.br/)
 
+## Developers
+
+* [Leader team] M. Sc. Valdigleis (valdigleis at gmail com) 
