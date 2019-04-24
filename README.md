@@ -9,4 +9,4 @@ LOWEKA is a fork of WEKA (stable version), with implementations of method propos
 
 ## Developers
 
-* [Leader team] M. Sc. Valdigleis (valdigleis at gmail com) 
+* [Team leader] M. Sc. Valdigleis (valdigleis at gmail com) 
