@@ -7,8 +7,10 @@ import java.util.Vector;
 import lolita.fuzo.aggregations.Aggregation;
 import lolita.fuzo.aggregations.AggregationNorm;
 import lolita.fuzo.aggregations.ArithmeticMean;
+import lolita.fuzo.aggregations.COWA;
 import lolita.fuzo.aggregations.Median;
 import lolita.fuzo.aggregations.OverlapAggregation;
+import lolita.fuzo.mixtures.GeneralizedMixtureFunction;
 import lolita.fuzo.mixtures.QuasiUniversalMixtureFunction;
 import lolita.fuzo.norms.GodelTconorm;
 import lolita.fuzo.norms.GodelTnorm;
@@ -42,6 +44,8 @@ public class CEMFPlus extends ParallelMultipleClassifiersCombiner implements Tec
 	protected static final int H_PRODUCT = 4;
 	/** combination rule: H-min */
 	protected static final int H_MIN = 5;
+	/** combination rule: H-cOWA */
+	protected static final int H_cOWA = 6;
 
 	/** combination rule: H-median */
 	protected static final int H_MEDIAN_B = 6;
@@ -62,7 +66,7 @@ public class CEMFPlus extends ParallelMultipleClassifiersCombiner implements Tec
 
 	protected static final Tag[] TAGS_RULES = { new Tag(H_MEDIAN, "Med", "Median"), new Tag(H_MAX, "Max", "Max"),
 			new Tag(H_AVERAGE, "Ari", "Arithmetic mean"), new Tag(H_PRODUCT, "Pro", "Product"),
-			new Tag(H_MIN, "Min", "Minimun") };
+			new Tag(H_MIN, "Min", "Minimun"), new Tag(H_cOWA, "H-cOWA", "cOWA") };
 
 	protected static final Tag[] TAGS_RULESB = { new Tag(H_MEDIAN_B, "Med", "Median"), new Tag(H_MAX_B, "Max", "Max"),
 			new Tag(H_AVERAGE_B, "Mean", "Arithmetic mean"), new Tag(H_PRODUCT_B, "Pro", "Product"),
@@ -182,7 +186,7 @@ public class CEMFPlus extends ParallelMultipleClassifiersCombiner implements Tec
 	}
 
 	public String pseudoConjunctionTipText() {
-		return "The second (or exterrnal) mixture function used.";
+		return "The function that replaces the product in the mixture function, can be seen as pseudo conjunction.";
 	}
 
 	/**
@@ -305,6 +309,9 @@ public class CEMFPlus extends ParallelMultipleClassifiersCombiner implements Tec
 				break;
 			case H_PRODUCT:
 				A = new AggregationNorm(new ProductTnorm());
+				break;
+			case H_cOWA:
+				A = new COWA();
 				break;
 			default:
 				A = null;
