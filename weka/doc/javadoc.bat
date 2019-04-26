@@ -1,0 +1,1 @@
+"C:\Program Files\Java\jdk-10.0.1\bin\javadoc.exe" -J-Xmx1000m @options

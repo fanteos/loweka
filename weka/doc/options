@@ -1,0 +1,24 @@
+-classpath
+'C:/Users/valdi/.m2/repository/nz/ac/waikato/cms/weka/thirdparty/java-cup-11b/2015.03.26/java-cup-11b-2015.03.26.jar;C:/Users/valdi/.m2/repository/nz/ac/waikato/cms/weka/thirdparty/java-cup-11b-runtime/2015.03.26/java-cup-11b-runtime-2015.03.26.jar;C:/Users/valdi/.m2/repository/nz/ac/waikato/cms/weka/thirdparty/bounce/0.18/bounce-0.18.jar;C:/Users/valdi/.m2/repository/org/apache/commons/commons-compress/1.18/commons-compress-1.18.jar;C:/Users/valdi/.m2/repository/com/googlecode/matrix-toolkits-java/mtj/1.0.4/mtj-1.0.4.jar;C:/Users/valdi/.m2/repository/com/github/fommil/netlib/all/1.1.2/all-1.1.2.pom;C:/Users/valdi/.m2/repository/com/github/fommil/netlib/netlib-native_ref-osx-x86_64/1.1/netlib-native_ref-osx-x86_64-1.1-natives.jar;C:/Users/valdi/.m2/repository/com/github/fommil/netlib/native_ref-java/1.1/native_ref-java-1.1.jar;C:/Users/valdi/.m2/repository/com/github/fommil/jniloader/1.1/jniloader-1.1.jar;C:/Users/valdi/.m2/repository/com/github/fommil/netlib/netlib-native_ref-linux-x86_64/1.1/netlib-native_ref-linux-x86_64-1.1-natives.jar;C:/Users/valdi/.m2/repository/com/github/fommil/netlib/netlib-native_ref-linux-i686/1.1/netlib-native_ref-linux-i686-1.1-natives.jar;C:/Users/valdi/.m2/repository/com/github/fommil/netlib/netlib-native_ref-win-x86_64/1.1/netlib-native_ref-win-x86_64-1.1-natives.jar;C:/Users/valdi/.m2/repository/com/github/fommil/netlib/netlib-native_ref-win-i686/1.1/netlib-native_ref-win-i686-1.1-natives.jar;C:/Users/valdi/.m2/repository/com/github/fommil/netlib/netlib-native_ref-linux-armhf/1.1/netlib-native_ref-linux-armhf-1.1-natives.jar;C:/Users/valdi/.m2/repository/com/github/fommil/netlib/netlib-native_system-osx-x86_64/1.1/netlib-native_system-osx-x86_64-1.1-natives.jar;C:/Users/valdi/.m2/repository/com/github/fommil/netlib/native_system-java/1.1/native_system-java-1.1.jar;C:/Users/valdi/.m2/repository/com/github/fommil/netlib/netlib-native_system-linux-x86_64/1.1/netlib-native_system-linux-x86_64-1.1-natives.jar;C:/Users/valdi/.m2/repository/com/github/fommil/netlib/netlib-native_system-linux-i686/1.1/netlib-native_system-linux-i686-1.1-natives.jar;C:/Users/valdi/.m2/repository/com/github/fommil/netlib/netlib-native_system-linux-armhf/1.1/netlib-native_system-linux-armhf-1.1-natives.jar;C:/Users/valdi/.m2/repository/com/github/fommil/netlib/netlib-native_system-win-x86_64/1.1/netlib-native_system-win-x86_64-1.1-natives.jar;C:/Users/valdi/.m2/repository/com/github/fommil/netlib/netlib-native_system-win-i686/1.1/netlib-native_system-win-i686-1.1-natives.jar;C:/Users/valdi/.m2/repository/net/sourceforge/f2j/arpack_combined_all/0.1/arpack_combined_all-0.1.jar;C:/Users/valdi/.m2/repository/com/googlecode/netlib-java/netlib-java/1.1/netlib-java-1.1.jar;C:/Users/valdi/.m2/repository/com/github/fommil/netlib/core/1.1/core-1.1.jar;C:/Users/valdi/.m2/repository/com/github/fracpete/jfilechooser-bookmarks/0.1.6/jfilechooser-bookmarks-0.1.6.jar;C:/Users/valdi/.m2/repository/com/github/fracpete/jclipboardhelper/0.1.0/jclipboardhelper-0.1.0.jar;C:/Users/valdi/.m2/repository/javax/xml/bind/jaxb-api/2.4.0-b180830.0359/jaxb-api-2.4.0-b180830.0359.jar;C:/Users/valdi/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar'
+-encoding
+'UTF-8'
+-public
+-sourcepath
+'C:/Users/valdi/workspace/loweka/weka/src/main/java'
+-subpackages
+weka:org
+-author
+-bottom
+'Copyright &#169; 2019 <a href="http://www.waikato.ac.nz/">University of Waikato, Hamilton, NZ</a>. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/valdi/workspace/loweka/weka/doc'
+-docencoding
+'UTF-8'
+-doctitle
+'weka-stable 3.8.4-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'weka-stable 3.8.4-SNAPSHOT API'

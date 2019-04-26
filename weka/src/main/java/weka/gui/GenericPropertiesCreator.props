@@ -24,6 +24,7 @@ weka.classifiers.Classifier=\
  weka.classifiers.bayes,\
  weka.classifiers.functions,\
  weka.classifiers.lazy,\
+ weka.classifiers.lolita,\
  weka.classifiers.meta,\
  weka.classifiers.meta.nestedDichotomies,\
  weka.classifiers.mi,\
