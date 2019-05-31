@@ -12,8 +12,15 @@ import lolita.fuzo.aggregations.Median;
 import lolita.fuzo.aggregations.OverlapAggregation;
 import lolita.fuzo.mixtures.GeneralizedMixtureFunction;
 import lolita.fuzo.mixtures.QuasiUniversalMixtureFunction;
+import lolita.fuzo.norms.AczelTnorm;
+import lolita.fuzo.norms.DombiTnorm;
+import lolita.fuzo.norms.DrasticTnorm;
+import lolita.fuzo.norms.FrankTnorm;
 import lolita.fuzo.norms.GodelTconorm;
 import lolita.fuzo.norms.GodelTnorm;
+import lolita.fuzo.norms.HamacherTnorm;
+import lolita.fuzo.norms.LukasiewiczTnorm;
+import lolita.fuzo.norms.NilpotentMinimumTnorm;
 import lolita.fuzo.norms.ProductTnorm;
 import lolita.fuzo.overlap.OverlapDB;
 import lolita.fuzo.overlap.OverlapMM;
@@ -63,6 +70,20 @@ public class CEMFPlus extends ParallelMultipleClassifiersCombiner implements Tec
 	protected static final int H_OVER_POW_P = 12;
 	/** combination rule: Overlap DB */
 	protected static final int H_OVER_DB = 13;
+	/** combination rule: Lukasiewicz t-norm */
+	protected static final int H_LUKAS = 14;
+	/** combination rule: Drastic t-norm */
+	protected static final int H_DRA = 15;
+	/** combination rule: Nilpotent minimun t-norm */
+	protected static final int H_NIL = 16;
+	/** combination rule: Aczel-Alsina t-norm */
+	protected static final int H_ACZ = 17;
+	/** combination rule: Dombi t-norm */
+	protected static final int H_DOM = 18;
+	/** combination rule: Frank t-norm */
+	protected static final int H_FRA = 19;
+	/** combination rule: Hamacher t-norm */
+	protected static final int H_HAM = 20;
 
 	protected static final Tag[] TAGS_RULES = { new Tag(H_MEDIAN, "Med", "Median"), new Tag(H_MAX, "Max", "Max"),
 			new Tag(H_AVERAGE, "Ari", "Arithmetic mean"), new Tag(H_PRODUCT, "Pro", "Product"),
@@ -71,7 +92,10 @@ public class CEMFPlus extends ParallelMultipleClassifiersCombiner implements Tec
 	protected static final Tag[] TAGS_RULESB = { new Tag(H_MEDIAN_B, "Med", "Median"), new Tag(H_MAX_B, "Max", "Max"),
 			new Tag(H_AVERAGE_B, "Mean", "Arithmetic mean"), new Tag(H_PRODUCT_B, "Pro", "Product"),
 			new Tag(H_MIN_B, "Min", "Minimun"), new Tag(H_OVER_MM, "OnM", "OverlapMM"), new Tag(H_OVER_POW_P, "Op", "OverlapPowP"),
-			new Tag(H_OVER_DB, "Odb", "OverlapDB") };
+			new Tag(H_OVER_DB, "Odb", "OverlapDB"),  new Tag(H_LUKAS, "L-tnorm", "Lukasiewicz t-norm"), 
+			new Tag(H_DRA, "D-tnorm", "Drastic t-norm"), new Tag(H_NIL, "Nil-tnorm", "Nilpotent min t-norm"),
+			new Tag(H_ACZ, "A-tnorm", "Aczel t-norm"), new Tag(H_DOM, "Do-tnorm", "Dombi t-norm"), 
+			new Tag(H_FRA, "F-tnorm", "Frank t-norm"), new Tag(H_HAM, "H-tnorm", "Hamacher t-norm")};
 
 	/** Number of folds */
 	protected int m_NumFolds = 10;
@@ -233,6 +257,7 @@ public class CEMFPlus extends ParallelMultipleClassifiersCombiner implements Tec
 	public void buildClassifier(Instances data) throws Exception {
 		Instances newData = new Instances(data);
 		newData.deleteWithMissingClass();
+		
 		super.buildClassifier(newData);
 		buildClassifiers(newData);
 	}
@@ -286,7 +311,13 @@ public class CEMFPlus extends ParallelMultipleClassifiersCombiner implements Tec
 				distribution[i] = GM.apply(v);
 			}
 		}
-		Utils.normalize(distribution);
+		double sum = 0.0;
+		for(int i = 0; i < distribution.length; i++) {
+			sum = sum + distribution[i];
+		}
+		if(sum != 0.0) {
+			Utils.normalize(distribution);
+		}
 		return distribution;
 	}
 
@@ -343,6 +374,27 @@ public class CEMFPlus extends ParallelMultipleClassifiersCombiner implements Tec
 				break;
 			case H_OVER_DB:
 				B = new OverlapAggregation(new OverlapDB());
+				break;
+			case H_LUKAS:
+				B =  new AggregationNorm(new LukasiewiczTnorm());
+				break;
+			case H_DRA:
+				B =  new AggregationNorm(new DrasticTnorm());
+				break;
+			case H_NIL:
+				B = new AggregationNorm(new NilpotentMinimumTnorm());
+				break;
+			case H_ACZ:
+				B = new AggregationNorm(new AczelTnorm());
+				break;
+			case H_DOM:
+				B = new AggregationNorm(new DombiTnorm());
+				break;
+			case H_FRA:
+				B = new AggregationNorm(new FrankTnorm());
+				break;
+			case H_HAM:
+				B = new AggregationNorm(new HamacherTnorm());
 				break;
 			default:
 				B = null;
